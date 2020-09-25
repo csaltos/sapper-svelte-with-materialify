@@ -1,5 +1,5 @@
 <script>
-	import * as S from "svelte-materialify";
+	import * as S from "svelte-materialify/src/";
 	
 	let theme = 'light';
 	
