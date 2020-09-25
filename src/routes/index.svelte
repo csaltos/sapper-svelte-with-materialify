@@ -1,46 +1,31 @@
-<style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
+<script>
+	import * as S from "svelte-materialify";
+	
+	let theme = 'light';
+	
+	function toggleTheme() {
+		if (theme === 'light') theme = 'dark';
+		else theme = 'light';
 	}
+</script>
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
-</style>
-
-<svelte:head>
-	<title>Sapper project template</title>
-</svelte:head>
-
-<h1>Great success!</h1>
-
-<figure>
-	<img alt='Success Kid' src='successkid.jpg'>
-	<figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<S.MaterialApp {theme}>
+	<S.AppBar>
+		<span slot="title">Title</span>
+	</S.AppBar>
+	<br />
+	<h2 class="mb-4">
+		Svelte Materialify
+	</h2>
+	<S.Divider />
+	<br>
+	<div class="text-center">
+		<a href="//github.com/TheComputerM/svelte-materialify/stargazers">
+			<S.Button class="primary-color">
+				Star on GitHub
+			</S.Button>
+		</a>
+		<S.Button on:click={toggleTheme}>Toggle Theme</S.Button>
+	</div>
+	<br />
+</S.MaterialApp>
